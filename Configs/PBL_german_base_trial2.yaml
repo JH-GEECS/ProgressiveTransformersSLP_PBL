@@ -3,14 +3,14 @@ data:
     trg: "skels"    # Target - 3D body co-ordinates (skels)
     files: "files"    # Filenames for each sequence
 
-    train: "./Data/tmp/train"
-    dev: "./Data/tmp/dev"
-    test: "./Data/tmp/test"
-
+    train: "/data/code/ProgressiveTransformersSLP_PBL/Data/real/train"
+    dev: "/data/code/ProgressiveTransformersSLP_PBL/Data/real/dev"
+    test: "/data/code/ProgressiveTransformersSLP_PBL/Data/real/test"
+# /data/code/ProgressiveTransformersSLP_PBL/Data/real/train.files
     max_sent_length: 300 # Max Sentence Length
     skip_frames: 1   # Skip frames in the data, to reduce the data input size
-    src_vocab: "./Configs/src_vocab.txt"
-
+    src_vocab: 
+# /data/code/ProgressiveTransformersSLP_PBL/Configs/src_vocab_bak.txt
 training:
     random_seed: 27   # Random seed for initialisation
     optimizer: "adam"   # Chosen optimiser (adam, ..)
@@ -24,10 +24,10 @@ training:
     decrease_factor: 0.7  # LR reduction factor, after the # of patience epochs
     early_stopping_metric: "dtw" # Which metric determines scheduling (DTW, loss, BT...)
     epochs: 20000  # How many epochs to run for
-    validation_freq: 10  # After how many steps to run a validation on the model
+    validation_freq: 10000  # After how many steps to run a validation on the model
     logging_freq: 250  # After how many steps to log training progress
     eval_metric: "dtw"  # Evaluation metric during training (dtw','bt')
-    model_dir: "./Models/T2P_PBL_trial1" # Where the model shall be stored
+    model_dir: "./Models/G2P_PBL_trial2" # Where the model shall be stored
     overwrite: False # Flag to overwrite a previous saved model in the model_dir
     continue: True  # Flag to continue from a previous saved model in the model_dir
     shuffle: True  # Flag to shuffle the data during training

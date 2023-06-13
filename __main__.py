@@ -23,7 +23,10 @@ def main():
                     help="path to model checkpoint")
 
     args = ap.parse_args()
-
+    
+    # args.mode = "train"
+    # args.config_path = "/data/code/ProgressiveTransformersSLP_PBL/Configs/PBL_german_base.yaml"
+    
     # If Train
     if args.mode == "train":
         train(cfg_file=args.config_path, ckpt=args.ckpt)

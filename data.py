@@ -234,6 +234,7 @@ class SignProdDataset(data.Dataset):
                 if len(trg_line) == 1:
                     continue
                 # Turn each joint into a float value, with 1e-8 for numerical stability
+                # todo 여기 한번 살펴보기, 아무래도 이때 text encoding이 어디서 깨지는 것으로 생각된다.
                 trg_line = [(float(joint) + 1e-8) for joint in trg_line]
                 # Split up the joints into frames, using trg_size as the amount of coordinates in each frame
                 # If using skip frames, this just skips over every Nth frame
